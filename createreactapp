@@ -1,1 +1,21 @@
 Create React app is a command line tool that help us to create the react project and run it.
+
+
+npx 
+using npx command is
+
+npx create-react-app project name
+
+
+is a npm package runner , which gets installed when we install node.
+
+
+________________
+
+
+in npm
+
+
+npm install create-react-app -g
+
+create-react-app project name
