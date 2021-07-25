@@ -1,0 +1,69 @@
+React Folder structure-
+_________________________________________
+
+we have 3 folders
+node modules
+src
+public
+
+
+package.json file
+package-lock.json
+readme.md
+.gitignore file
+
+
+
+______________________
+
+public folder
+
+manifest.json - for progressive web apps
+favicon.ico
+index.html
+
+index.html has body
+
+inside the body we have a div tag
+<div id= "root"></div>
+
+
+__________________________________
+
+
+src folder
+
+index.js- starting point of the react application is index.js
+
+
+
+ReactDOM.render(<App />,document.getElementBy('root'));
+
+App component is the root component and the dom element that will be controlled by react with id a
+dom element is the element with id as root.
+s root
+
+we call the id root as the dom root node everything will be controlled by react inside the dom node.
+
+
+____________________
+
+when we run npm start,
+ it  index.html file file serves in browser
+index.html contains the root dom node
+controls goes to index.js
+react dom renders the appcomponet on the root dom node
+app component contains the html shown in browser
+
+_____________________________
+
+
+
+
+
+
+
+
+
+
+
