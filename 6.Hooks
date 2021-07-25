@@ -1,0 +1,36 @@
+React Hooks-
+______________________________________________
+
+came in version 16
+
+class components can use state and life cycle hooks.
+
+__________________________________________________
+
+IN 2018 react introduced hooks
+
+Hooks are new features that lets you use state and other react features without writing a class
+
+
+_______________________________________________________
+
+Hooks are 100% back wards compatible
+
+
+__________________________________________________
+
+
+import React from 'react'
+
+function Example(){
+const [count, setCount] = useState(0);
+
+}
+
+
+
+
+
+
+
+
