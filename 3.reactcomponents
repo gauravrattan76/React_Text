@@ -1,0 +1,60 @@
+Components-
+____________________________
+
+component describe/represent part of user interface
+
+we have header component
+sidenva
+main 
+footer
+
+and  a component to contain all the component
+
+_________________________________
+
+components are reusable
+
+_______________________________
+
+components can contain other components
+
+_____________________
+
+component code contains in .js file or .jsx file
+
+____________________________
+
+there are 2 types of component
+
+1.stateless functional components
+
+they are just javacsript functions which returns html tag
+
+function Welcome(props){
+return <h1>Helo ,{props.name}</h1>
+}
+
+
+2.statefull class components
+
+are regular es6 classes that extend component class from react library, must contain render method
+
+class Welcome extends React.Component{
+render(){
+return <h1>Helo ,{props.name}</h1>
+}
+}
+
+
+_______________________________________________________
+
+App component-
+
+it has .js extesnion
+
+
+
+
+
+
+
