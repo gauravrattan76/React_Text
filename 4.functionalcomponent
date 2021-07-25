@@ -1,0 +1,38 @@
+Functional Components-
+_____________________________
+
+They are just javascript functions that can recive input of properties and return html(jsx)
+
+//import react libray
+import React from 'react'
+
+// function Greet(){
+// return <h1>Hello Gaurav</h1>
+// }
+
+//default export so we can import with any name
+const Greet = () => <h1>Hello Guarav</h1>
+
+export default Greet
+
+
+//here it is named export so we have to use the same name in import
+// export const Greet = () => <h1>Hello Guarav</h1>
+
+
+and then import the Greet component in the app component
+
+import logo from './logo.svg';
+import './App.css';
+import Greet from '../src/components/Greet'
+
+function App() {
+  return (
+    <div className="App">
+<Greet />
+    </div>
+  );
+}
+
+export default App;
+
