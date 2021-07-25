@@ -1,0 +1,45 @@
+Class Components-
+_______________________________
+
+
+are es6 classes that extend React.Component class, unlike functional components they can recive props object
+
+Difference-
+
+They can maintain private internal state, private to that component.
+need to have a render method and that need to return an html
+
+
+
+import React, {Component} from 'react'
+
+class Welcome extends React.Component{
+    render(){
+        return <h1>Class Component!!</h1>
+    }
+}
+
+export default Welcome
+
+
+_______________________________________________
+
+function vs class
+
+advantage of function components
+
+
+1.absence of this keyword
+2.forced to think of a solution without state, can be helpull in complicted app
+3. callled statless components
+
+advantages of class
+
+1. can have private data  called state
+2.they provide life cycle hooks
+3. called statefull components
+
+
+_________________________________________
+
+
