@@ -1,0 +1,59 @@
+State-
+_________________
+
+Every component returns jsx which describes the user interface
+
+Props vs state
+
+Props are immutable, where as state can be changed
+
+Props can be passed to component, where as state is managed inside the component
+
+State can be changed
+
+We can access props by using - props keyword in functional component or this.props keyword in class component
+
+Where as state can be accused by
+
+This.state keyword
+
+___________
+
+Code
+
+import React,{Component} from 'react'
+
+class Message extends React.Component{
+//best practice to define state in constructor and call super keyword to call react component base constructor
+    constructor(){
+        super()
+        this.state = {
+            message:'welcome visitor'
+        }
+    }
+
+changeMessage(){
+//setstate method to update the state
+    this.setState({
+        message:'this is new welcome visitor'
+    })
+}
+
+    render(){
+        return(
+            <div>
+                <h1>{this.state.message}</h1>
+Event binding
+                <button onClick={() => this.changeMessage()}>subscribe</button>
+            </div>
+        )
+        }
+}
+
+export default Message
+
+
+________
+
+State is with in the component and can be changed
+
