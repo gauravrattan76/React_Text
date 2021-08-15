@@ -1,0 +1,98 @@
+Props-
+________________
+
+Props are the object which has  the attribute and value passed from parent to child component
+Props are immutable that is their values can’t be changed
+
+
+Parent-
+
+import logo from './logo.svg';
+import './App.css';
+import Hello from '../src/components/Hello'
+import Greet from '../src/components/Greet'
+
+function App() {
+  return (
+    <div className="App">
+     <h1>Test Gaurav</h1>
+     <Hello />
+     <Greet name="gaurav" heroName="batman">
+       <p>This is a sample app</p>
+     </Greet>
+     <Greet name="rahul" heroName="superman" />
+     <Greet name="Dipankar" heroName="spiderman" />
+    </div>
+  );
+}
+
+export default App;
+
+
+
+
+
+
+________________
+
+Child-
+
+import React from 'react'
+
+const Greet = (props) => {
+    console.log(props);
+    return(
+       
+        <h2>Hello {props.name} a.k.a {props.heroName}</h2>
+    )
+}
+
+export default Greet
+
+
+
+_____________
+
+We can pass dynamic content as props.children
+
+import React from 'react'
+
+const Greet = (props) => {
+    console.log(props);
+    return(
+       <div>
+        <h2>Hello {props.name} a.k.a {props.heroName}</h2>
+        <h3>{props.children}</h3>
+        </div>
+       
+    )
+}
+
+export default Greet
+
+
+___________
+
+We can use the props object in class component using this.props keyword
+
+import React,{Component} from 'react'
+
+class Welcome extends React.Component{
+    render(){
+        return(
+            <div>
+                <h1>This is {this.props.name} a.k.a {this.props.heroName}</h1>
+                <h2>{this.props.children}</h2>
+            </div>
+        )
+        }
+}
+
+export default Welcome
+
+
+
+
+
+
+
