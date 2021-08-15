@@ -1,0 +1,38 @@
+JSX-
+__________________
+
+Javascript xml is extension to the javascript language syntax
+Write xml like code for elements and components
+Jsx makes code simpler and elegant
+
+_____________
+
+Normal function  component
+
+
+import React from 'react'
+
+const Hello = () => {
+    return(
+        <div>
+            <h2>
+                Hello gaurav from jsx component
+            </h2>
+        </div>
+    )
+}
+
+export default Hello
+
+
+______________
+
+
+React.createElement('div',null,'<h1>Hello Gaurav</h1>')
+ It takes the first param as a tag, second param as additional properties and Thord tag as the real tag
+
+Second param is properties object it can take key value pair
+
+return React.createElement('div',
+    {id:'hello', className:'dummy Class'}, //here the  id and name are assigned to all the div tag
+    React.createElement('h1',null,'Hello Gaurav'))
