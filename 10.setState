@@ -1,6 +1,8 @@
 setState-
 ______________________
 
+Always use the set state method as this will re render the dom and we can see the updated data
+
 import React,{Component} from 'react'
 
 class Increment extends React.Component{
