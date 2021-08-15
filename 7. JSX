@@ -27,6 +27,27 @@ export default Hello
 
 ______________
 
+JSX code for the same-
+
+import React from 'react'
+
+const Hello = () => {
+    // return(
+    //     <div>
+    //         <h2>
+    //             Hello gaurav from jsx component
+    //         </h2>
+    //     </div>
+    // )
+    return React.createElement('div',
+    {id:'hello', className:'dummy Class'},
+    React.createElement('h1',null,'Hello Gaurav'))
+}
+
+export default Hello
+
+_____________
+
 
 React.createElement('div',null,'<h1>Hello Gaurav</h1>')
  It takes the first param as a tag, second param as additional properties and Thord tag as the real tag
