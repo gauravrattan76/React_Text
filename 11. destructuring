@@ -1,0 +1,41 @@
+Destructuring -
+__________________________
+
+
+import React from 'react'
+
+const Greet = (props) => {
+//here we descructure the props
+    const {name,heroName} = props;
+    // console.log(props);
+    return(
+       <div>
+        <h2>Hello {name} a.k.a {heroName}</h2>
+        {/* <h3>{props.children}</h3> */}
+        </div>
+       
+    )
+}
+
+export default Greet
+
+
+________
+
+In class component we restructure in render component
+
+import React,{Component} from 'react'
+
+class Welcome extends React.Component{
+    render(){
+Const (name, herName) = this.state
+        return(
+            <div>
+                <h1>This is {name} a.k.a {heroName}</h1>
+                <h2>{this.props.children}</h2>
+            </div>
+        )
+        }
+}
+
+export default Welcome
