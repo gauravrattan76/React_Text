@@ -1,0 +1,63 @@
+Event Binding-
+____________________
+
+import React,{Component} from 'react'
+
+class Welcome extends React.Component{
+
+    constructor(){
+        super()
+        this.state = {
+            message:"Hello"
+        }
+    }
+
+    handleClick(){
+        console.log(this)
+        console.log('click record')
+    }
+   
+    render(){
+       
+        return(
+            <div>
+                <h1>{this.state.message}</h1>
+//if we don’t use bind.this we only call the function but no context is there, bind method binds the context
+                <button onClick={this.handleClick.bind(this)}>click me</button>
+            </div>
+        )
+        }
+}
+
+export default Welcome
+
+
+There are 3 approaches-
+1. With bind.this
+
+   <button onClick={this.handleClick.bind(this)}>click me</button>
+
+
+2. Arrow functions-
+<button onClick={() => this.handleClick()}>click me</button>
+
+3.binding at the constructor— its the best approach as binding happens once  in the constructor rather than in the render method so better
+  constructor(){
+        super()
+        this.state = {
+            message:"Hello"
+        }
+        this.handleClick = this.handleClick.bind(this)
+    }
+
+ <button onClick={this.handleClick}>click me</button>
+
+4. Class property as arrow  functions-
+
+ handleClick= () =>{
+        console.log(this)
+        console.log('click record')
+    }
+
+
+ <button onClick={this.handleClick}>click me</button>
