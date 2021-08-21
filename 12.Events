@@ -1,0 +1,52 @@
+Events -
+_______________
+
+Event handling in functional components
+
+
+Event handler is a function not a function cal
+
+
+
+import React from 'react'
+
+function Greet() {
+function handleClick() {
+    console.log('button clicked')
+}
+
+    return(
+       <div>
+//event mentioned here use function to call it, we only pass the function name not the function call
+        <button onClick={handleClick}>click me</button>
+        </div>
+       
+    )
+}
+
+export default Greet
+
+_________________
+
+Event handling in class components-
+
+import React,{Component} from 'react'
+
+class Welcome extends React.Component{
+    handleClick(){
+        console.log('click record')
+    }
+   
+    render(){
+       
+        return(
+            <div>
+//we pass the function not the function call
+                <button onClick={this.handleClick}>click me</button>
+            </div>
+        )
+        }
+}
+
+export default Welcome
+
