@@ -1,0 +1,10 @@
+useContext-
+___________________________________
+
+
+Context provides a way to pass data through the component tree without having to pass props down manually at every level.
+
+
+If we have 4 levels of children we need to send data to first layer then second and then 3rd layer as props even if they don’t need them.
+
+
