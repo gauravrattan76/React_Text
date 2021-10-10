@@ -1,0 +1,80 @@
+Using context-
+_____________________________________
+
+1. Create the. Context.
+2. Provide a context value.
+3. Consume the context value.
+
+____________________
+
+
+Step 1 creating the user context -
+
+
+
+import React from 'react'
+
+const UserContext = React.createContext()
+
+const UserProvider = UserContext.Provider;
+
+const UserConsumer = UserContext.Consumer;
+
+
+export {UserProvider, UserConsumer}
+
+
+____________________________
+
+Provide  the context with the value - better provide the context at the root level
+
+import React from 'react'
+import ComponentA from '../src/Components/ComponentA';
+import {UserProvider} from './Components/userContext';
+
+function App() {
+  return (
+    <div className="App">
+      <UserProvider value="Gaurav">
+      <ComponentA />
+      </UserProvider>
+    </div>
+  );
+}
+
+export default App;
+
+
+____________________
+
+Consume the context value -
+
+userConsumer takes a function
+
+import React, { useState } from 'react'
+import {UserConsumer} from './userContext';
+
+
+function ComponentC() {
+    return (
+        <div>
+          <UserConsumer>
+              {
+                  (userName) => {
+                      return <div>Hello {userName}</div>
+                      
+                  }
+              }
+          </UserConsumer>
+        </div>
+    )
+}
+
+export default ComponentC
+
+
+
+
+
+
+
