@@ -1,0 +1,95 @@
+Fragments-
+______________________________
+
+
+Fragments allow us to group of list children elements with outng adding extra nodes to the Dom.
+
+Short hand notation -
+
+<> </> only downside is that we can’t use keys with this.
+
+
+Really helpful in nesting components like td inside tr , we don’t need a div,
+
+
+
+import React from 'react'
+import Columns from '../Components/Columns'
+
+function Tables() {
+    return (
+        <div className="tables">
+            <table>
+                <tbody>
+                    <tr>
+<Columns />
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    )
+}
+
+export default Tables
+
+
+
+import React from 'react'
+//here better we use fragments
+function Columns() {
+    return (
+        <div className="columns">
+            <td>column1</td>
+            <td>column2</td>
+        </div>
+    )
+}
+
+export default Columns
+
+
+We get error that tr can’t have dev inside it should have td,
+ So we need to use react.fragments
+
+_________
+
+Using fragments-
+
+
+import React from 'react'
+
+function Columns() {
+    return (
+        <React.Fragment>
+            <td>column1</td>
+            <td>column2</td>
+        </React.Fragment>
+    )
+}
+
+export default Columns
+
+_________
+
+Using fragments as keys-
+
+ <React.Fragment>
+          {
+              item.map(item =>{
+                  <React.Fragment key = {item.id}>
+                      <h1>{item.id}</h1>
+                      </React.Fragment>
+              })
+          }
+        </React.Fragment>
+
+
+React fragments can also take key
+
+We can add empty tag also
+Like 
+<></>
+
+But we can’t add key in short hand notations.
+
+____________
