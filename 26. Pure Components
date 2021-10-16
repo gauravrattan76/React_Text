@@ -1,0 +1,113 @@
+Pure components-
+_____________________
+
+Pure components extend from purecomponent class from react-
+
+A pure component implements the shouldcomponentupdate life cycle with the shallow prop and state comparison.
+
+It sc state with previous state and props with previous props if there us dffrnce then only re render
+
+If no dffrnce no re render hence a performance boost
+
+So set interval method reset the state properties hence re renders the parent, now if the parent r renders the child also re renders
+
+Unless we return false from shouldcomponentupdate
+
+Regular component-  doesn’t implement the shouldcomponnetupdate method it always return true by default
+
+Pure component- it implements the shouldcomponentupdate with the shallow comparison of state and props.
+
+
+Shall comparison
+
+Primitive type
+
+A and b primitive type shallow comparison Arte true if the value is same and type is same
+
+Complex type
+
+Object and arrays
+
+For complex type sc is true if they refer to the same object
+
+Var a = [1,2,3]
+var b =[1,2,3]
+Vart c = a;
+
+A sc b returns false as they don’t refer to same object
+
+A === b false as they point to diffent locations
+
+A === c  true
+
+______________________________
+
+Parent component.js-
+
+import React, { Component } from 'react'
+import PureComponents from '../Components/PureComponents'
+import RegularComponents from '../Components/RegularComponents'
+
+class ParentComponent extends Component {
+    constructor(props) {
+        super(props)
+        this.state = {
+            name: "gaurav"
+        }
+    }
+
+    componentDidMount(){
+        setInterval(() => {
+            this.setState({
+                name: "rattan"
+            })
+        }, 2000);
+    }
+
+    render() {
+        console.log("parent component being called")
+       
+        return (
+            <div>
+                <PureComponents name={this.state.name} />
+                <RegularComponents name={this.state.name} />
+            </div>
+        )
+    }
+}
+
+export default ParentComponent
+
+__________________
+
+Pure component-
+
+import React,{PureComponent} from 'react'
+
+class PureComponents extends PureComponent{
+    render(){
+        console.log("pure component called");
+        return(
+            <div><h1>Pure Component - {this.props.name}</h1></div>
+        )
+    }
+}
+
+export default PureComponents
+_____________________________________
+
+Regular component-
+
+import React,{Component} from 'react'
+
+class RegularComponents extends Component{
+    render(){
+        console.log("regular components being called")
+        return(
+            <div><h1>Regular Component -{this.props.name}</h1></div>
+        )
+    }
+}
+
+export default RegularComponents
+______________________________
